@@ -16,18 +16,38 @@ project 1 - A Random Quote Generator
 ***/
 
 var quotes = [
-  {quote: "quote1", source: "quote1source-speaker", citation: "quote1cit-place", year: "quote1year"},
-{quote: "quote2", source: "quote2source-speaker", citation: "quote2cit-place", year: "quote2year"},
-{quote: "quote3", source: "quote3source-speaker", citation: "quote3cit-place", year: "quote3year"},
-{quote: "quote4", source: "quote4source-speaker", citation: "quote4cit-place", year: "quote4year"},
-{quote: "quote5", source: "quote5source-speaker", citation: "quote5cit-place", year: "quote5year"},
-{quote: "quote6", source: "quote6source-speaker", citation: "quote6cit-place", year: "quote6year"},
-{quote: "quote7", source: "quote7source-speaker", year: "quote7year"},
-{quote: "quote8", source: "quote8source-speaker", year: "quote8year"},
-{quote: "quote9", source: "quote9source-speaker", year: "quote9year"},
-{quote: "quote10", source: "quote10source-speaker", citation: "quote10cit-place"},
-{quote: "quote11", source: "quote11source-speaker", citation: "quote11cit-place"},
-{quote: "quote12", source: "quote12source-speaker", citation: "quote12cit-place"},
+  {quote: "After climbing a great hill, one only finds that there are many more hills to climb.", 
+  source: "Nelson Mandela"},
+
+  {quote: "Knowing is not enough; we must apply. Willing is not enough we must do", 
+  source: "Goethe", 
+  citation: "http://www.wiseoldsayings.com/training-quotes/"},
+
+{quote: "Mothers and daughters are closest, when daughters become mothers.", 
+source: "unknown", 
+citation: "http://www.wiseoldsayings.com/mother-and-daughter-quotes/"},
+
+{quote: "Be willing to be a beginner every single morning", 
+source: "Meister Eckhart", 
+citation: "http://www.wiseoldsayings.com/starting-over-quotes/"},
+
+{quote: "Truth is everybody is going to hurt you: you just gotta find the ones worth suffering for.",
+ source: "Bob Marley", 
+ citation: "http://www.wiseoldsayings.com/being-hurt-quotes/"},
+
+{quote: "The greatest glory in living lies not in never falling, but in rising every time we fall",
+source: "Nelson Mandela", 
+citation: "https://twitter.com/"},
+
+{quote: "We don't believe that you should ever replace physical education. Even in a thousand years, a computer will never be able to do so.",
+ source: "Sal Khan", 
+ citation: "https://www.brainyquote.com"},
+
+{quote: "Predicting rain doesn't count. Building arks does", 
+source: "Warren Buffett", 
+citation: "https://medium.com", 
+year: "2001"},
+
 ];
 
 
