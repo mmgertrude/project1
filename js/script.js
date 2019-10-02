@@ -132,24 +132,27 @@ function printQuote(){
 
   //Seting the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = HTMLstring;
+  
+  //change background color by calling changeBgColor()
   changeBgColor();
   return HTMLstring;
 }
 
-
-  function changeBgColor(){
-    var numbersAndLetters = '0123456789ABCDEF';
-    var randomColor = '#';
-    do {
+//function to randomly select color and use it as the new background color
+function changeBgColor(){
+  var numbersAndLetters = '0123456789ABCDEF';
+  var randomColor = '#';
+  do {
       
-      //formula below adopted from: https://stackoverflow.com/questions/1484506/random-color-generator
-      for (var hexColor = 0; hexColor < 6; hexColor++) {
+    //formula below adopted from: https://stackoverflow.com/questions/1484506/random-color-generator
+    for (var hexColor = 0; hexColor < 6; hexColor++) {
       randomColor += numbersAndLetters[Math.floor(Math.random() * 16)];} 
 
-      //if color randomColor is white, select another:
+    //if color randomColor is white, select another:
     } while (randomColor==="#FFFFFF");
 
-    document.body.style.backgroundColor = randomColor;
+  
+  document.body.style.backgroundColor = randomColor;
   }
 
 
