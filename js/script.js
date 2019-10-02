@@ -138,7 +138,7 @@ function printQuote(){
   return HTMLstring;
 }
 
-
+//function to randomly select color and use it as the new background color
 function changeBgColor(){
   var numbersAndLetters = '0123456789ABCDEF';
   var randomColor = '#';
@@ -148,10 +148,11 @@ function changeBgColor(){
     for (var hexColor = 0; hexColor < 6; hexColor++) {
       randomColor += numbersAndLetters[Math.floor(Math.random() * 16)];} 
 
-      //if color randomColor is white, select another:
+    //if color randomColor is white, select another:
     } while (randomColor==="#FFFFFF");
 
-    document.body.style.backgroundColor = randomColor;
+  
+  document.body.style.backgroundColor = randomColor;
   }
 
 
