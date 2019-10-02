@@ -129,7 +129,7 @@ function printQuote(){
     }  
 
   HTMLstring += ' </p>';
-console.log(HTMLstring);
+
   //Seting the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = HTMLstring;
   changeBgColor();
@@ -138,17 +138,25 @@ console.log(HTMLstring);
 
 
   function changeBgColor(){
-    var sixBgColors = ["red", "navy", "maroon", "blue", "pink", "gray"];
-    var randColor = sixBgColors[Math.floor(Math.random() * sixBgColors.length)];
-    document.body.style.backgroundColor = randColor;
+    var numbersAndLetters = '0123456789ABCDEF';
+    var randomColor = '#';
+    do {
+      
+      //formula below adopted from: https://stackoverflow.com/questions/1484506/random-color-generator
+      for (var hexColor = 0; hexColor < 6; hexColor++) {
+      randomColor += numbersAndLetters[Math.floor(Math.random() * 16)];} 
+
+      //if color randomColor is white, select another:
+    } while (randomColor==="#FFFFFF");
+
+    document.body.style.backgroundColor = randomColor;
   }
 
-  
 
 /*"invoke", the `printQuote` function by triggering the EventListener each time
 "show another quote" button is clicked. */
 document.getElementById('loadQuote').addEventListener("click", printQuote,false);
 
-//print a new quote with a random color after 20 seconds:
+//print a new quote with a random color after 20 seconds from when the last quote was displayed:
 setInterval(function () {printQuote();},(20*1000));
   
