@@ -7,37 +7,77 @@ project 1 - A Random Quote Generator
 
 
 var quotes = [
-{quote: "After climbing a great hill, one only finds that there are many more hills to climb.", 
-source: "Nelson Mandela"},
 
 {quote: "Knowing is not enough; we must apply. Willing is not enough we must do", 
 source: "Goethe", 
-citation: "http://www.wiseoldsayings.com/training-quotes/"},
+citation: "http://www.wiseoldsayings.com",
+category: "Training"},
+
+{quote: "I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.' ",     
+source: "Muhammad Ali", 
+citation: "http://www.wiseoldsayings.com",
+category: "Training"},
+
+{quote: "We don't believe that you should ever replace physical education. Even in a thousand years, a computer will never be able to do so.",
+source: "Sal Khan", 
+citation: "https://www.brainyquote.com",
+category: "Training"},
+
+{quote: "You only ever grow as a human being if you're outside your comfort zone.",
+source: "Percy Cerutty", 
+citation: "http://www.wiseoldsayings.com/training-quotes/",
+category: "Training"},
+
+{quote: "No citizen has a right to be an amateur in the matter of physical training what a disgrace it is for a man to grow old without ever seeing the beauty and strength of which his body is capable.",
+source: "Socrates", 
+citation: "http://www.wiseoldsayings.com/training-quotes/",
+category: "Training"},
+
+   
+{quote: "Be it ever so humble there's no place like home.", 
+source: "unknown", 
+citation: "http://www.wiseoldsayings.com",
+category: "Family"},
+
+{quote: "It is not flesh and blood but the heart which makes us fathers and sons.",
+source: "Johann Schiller", 
+citation: "http://www.wiseoldsayings.com",
+category: "Family"},
+
+{quote: "What greater thing is there for human souls than to feel that they are joined for life - to be with each other in silent unspeakable memories.",
+source: "George Eliot",
+citation: "http://www.wiseoldsayings.com",
+category: "Family"},
+
 
 {quote: "Mothers and daughters are closest, when daughters become mothers.", 
 source: "unknown", 
-citation: "http://www.wiseoldsayings.com/mother-and-daughter-quotes/"},
+citation: "http://www.wiseoldsayings.com",
+category: "Family"},
 
 {quote: "Be willing to be a beginner every single morning", 
 source: "Meister Eckhart", 
-citation: "http://www.wiseoldsayings.com/starting-over-quotes/"},
+citation: "http://www.wiseoldsayings.com",
+category: "Ambition"},
+
+{quote: "After climbing a great hill, one only finds that there are many more hills to climb.", 
+source: "Nelson Mandela",
+category: "Ambition"},
+
+{quote: "The greatest glory in living lies not in never falling, but in rising every time we fall",
+source: "Nelson Mandela", 
+citation: "https://twitter.com/",
+category: "Ambition"},
 
 {quote: "Truth is everybody is going to hurt you: you just gotta find the ones worth suffering for.",
 source: "Bob Marley", 
 citation: "http://www.wiseoldsayings.com/being-hurt-quotes/"},
 
-{quote: "The greatest glory in living lies not in never falling, but in rising every time we fall",
-source: "Nelson Mandela", 
-citation: "https://twitter.com/"},
-
-{quote: "We don't believe that you should ever replace physical education. Even in a thousand years, a computer will never be able to do so.",
-source: "Sal Khan", 
-citation: "https://www.brainyquote.com"},
-
 {quote: "Predicting rain doesn't count. Building arks does", 
 source: "Warren Buffett", 
 citation: "https://medium.com", 
-year: "2001"},
+year: "2001",
+category: "Action"},
 
 ];
 
@@ -82,17 +122,28 @@ function printQuote(){
 
   if (randQuote.year){
     HTMLstring += '<span class="year">' + randQuote.year + '</span>';
-    }      
+    }  
+    
+  if (randQuote.category){
+    HTMLstring += '<p class="category"> ' + randQuote.category;
+    }  
 
   HTMLstring += ' </p>';
-
+console.log(HTMLstring);
   //Seting the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = HTMLstring;
+  changeBgColor();
   return HTMLstring;
+}
+
+function changeBgColor(){
+  var sixBgColors = ["red", "navy", "maroon", "blue", "pink", "gray"];
+  var randColor = sixBgColors[Math.floor(Math.random() * sixBgColors.length)];
+  document.body.style.backgroundColor = randColor;
 }
 
 /*"invoke", the `printQuote` function by triggering the EventListener each time
 "show another quote" button is clicked. */
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote,false);
 
 
