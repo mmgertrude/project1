@@ -87,10 +87,12 @@ function printQuote(){
   // HTML_string += '<p class="quote"> ' + randQuote.quote + '</p>';
   // HTML_string += '<p class="source"> ' + randQuote.source + '</p>';
 
+  
   var outputQuote = randQuote.quote;
   var outputSource = randQuote.source;
   var outputCitation = "";
   var outputYear = "";
+
 
   if (randQuote.citation){
     //outputCitation = randQuote.citation;
@@ -101,7 +103,7 @@ function printQuote(){
     outputYear = '<span class="year">' + randQuote.year + '</span>';
     }      
 
-  HTML_string = '<p class="quote">' + outputQuote + '</p>' + '<p class="source">' + outputSource  + outputCitation  + outputYear + '</p>';
+  HTML_string = '<p class="quote">' + randQuote.quote + '</p>' + '<p class="source">' + randQuote.source  + outputCitation  + outputYear + '</p>';
 
   document.getElementById('quote-box').innerHTML = HTML_string;
   console.log(HTML_string);
