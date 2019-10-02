@@ -136,14 +136,19 @@ console.log(HTMLstring);
   return HTMLstring;
 }
 
-function changeBgColor(){
-  var sixBgColors = ["red", "navy", "maroon", "blue", "pink", "gray"];
-  var randColor = sixBgColors[Math.floor(Math.random() * sixBgColors.length)];
-  document.body.style.backgroundColor = randColor;
-}
+
+  function changeBgColor(){
+    var sixBgColors = ["red", "navy", "maroon", "blue", "pink", "gray"];
+    var randColor = sixBgColors[Math.floor(Math.random() * sixBgColors.length)];
+    document.body.style.backgroundColor = randColor;
+  }
+
+  
 
 /*"invoke", the `printQuote` function by triggering the EventListener each time
 "show another quote" button is clicked. */
 document.getElementById('loadQuote').addEventListener("click", printQuote,false);
 
-
+//print a new quote with a random color after 20 seconds:
+setInterval(function () {printQuote();},(20*1000));
+  
