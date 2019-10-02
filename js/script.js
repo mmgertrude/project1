@@ -84,20 +84,32 @@ function printQuote(){
   var randQuote = getRandomQuote();
   var HTML_string = "";
 
-  HTML_string += '<p class="quote"> ' + randQuote.quote + '</p>';
-  HTML_string += '<p class="source"> ' + randQuote.source + '</p>';
+  // HTML_string += '<p class="quote"> ' + randQuote.quote + '</p>';
+  // HTML_string += '<p class="source"> ' + randQuote.source + '</p>';
 
+  var outputQuote = randQuote.quote;
+  var outputSource = randQuote.source;
+  var outputCitation = "";
+  var outputYear = "";
 
   if (randQuote.citation){
-      HTML_string += '<p class="citation"> ' + randQuote.citation + '</p>';}
+    //outputCitation = randQuote.citation;
+    outputCitation = '<span class="citation">' + randQuote.citation + '</span>';
+      }
 
   if (randQuote.year){
-      HTML_string += '<p class="year"> ' + randQuote.year + '</p>';}
-      
+    outputYear = '<span class="year">' + randQuote.year + '</span>';
+    }      
+
+  HTML_string = '<p class="quote">' + outputQuote + '</p>' + '<p class="source">' + outputSource  + outputCitation  + outputYear + '</p>';
+
   document.getElementById('quote-box').innerHTML = HTML_string;
+  console.log(HTML_string);
   return HTML_string;
 }
 
+//how HTML_string should be:
+// '<p class="quote">' + randQuote.quote  + '</p><p class="source">' + Patrick McKenzie + '<span class="citation">' + Twitter</span><span class="year">2016</span></p>'
 
 /***
   When the "Show another quote" button is clicked, the event listener 
