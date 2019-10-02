@@ -138,7 +138,7 @@ function printQuote(){
   return HTMLstring;
 }
 
-//function to randomly select color and use it as the new background color
+ master
 function changeBgColor(){
   var numbersAndLetters = '0123456789ABCDEF';
   var randomColor = '#';
