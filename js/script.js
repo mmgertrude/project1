@@ -82,12 +82,12 @@ function getRandomQuote(){
 
 function printQuote(){
   var randQuote = getRandomQuote();
-  var HTML_string = "";
+  var HTMLString = "";
 
   // HTML_string += '<p class="quote"> ' + randQuote.quote + '</p>';
   // HTML_string += '<p class="source"> ' + randQuote.source + '</p>';
 
-  
+
   var outputQuote = randQuote.quote;
   var outputSource = randQuote.source;
   var outputCitation = "";
