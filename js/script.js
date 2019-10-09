@@ -93,28 +93,17 @@ function getRandomQuote(){
   return quotes[randNum];
 }
 
-/*
-function printQuote() builds the HTML string that will be displayed 
-on the web page each time one requests a random quote.
-The string will be displayed in the "quote-box" div´s inner sections 
-of the classes - "quote", "source","citation" and "year"
- */
+
+//function printQuote() builds the HTML string 
+ 
 function printQuote(){
   var randQuote = getRandomQuote();
   var HTMLstring = "";
 
   HTMLstring += '<p class="quote"> ' + randQuote.quote + '</p>';
-
-  /*
-  Here, the paragraph opened by the p tag at the "source" class encloses the 
-  span and the "citation" and "year" classes, this paragraph will be closed
-  with the closing p tag at the end of this paragraph later.
-  */
-
   HTMLstring += '<p class="source"> ' + randQuote.source; 
 
-
-  // if statements to check if the quote has a citation and if it has a year:
+  // if statements to check if the quote has a citation , year or category:
 
   if (randQuote.citation){
     HTMLstring += '<span class="citation">' + randQuote.citation + '</span>';
@@ -130,7 +119,7 @@ function printQuote(){
 
   HTMLstring += ' </p>';
 
-  //Seting the `innerHTML` of the `quote-box` div to the HTML string
+  //Setting the `innerHTML` of the `quote-box` div to the HTML string
   document.getElementById('quote-box').innerHTML = HTMLstring;
   
   //change background color by calling changeBgColor()
@@ -138,7 +127,7 @@ function printQuote(){
   return HTMLstring;
 }
 
-//function to randomly select color and use it as the new background color
+//function changeBgColor() randomly selects a color and uses it as the new background color
 function changeBgColor(){
   var numbersAndLetters = '0123456789ABCDEF';
   var randomColor = '#';
